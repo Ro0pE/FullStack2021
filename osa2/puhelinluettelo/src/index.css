@@ -1,15 +1,15 @@
 h1 {
   color: green;
-  font-style: italic;
+  font-style: initial;
 }
 
 h2 {
   color: chocolate;
-  font-style: italic;
+  font-style: initial;
 }
 
 .person {
-  color: darkorchid;
+  color: black;
   padding-top: 5px;
   font-size: 22px;
 }

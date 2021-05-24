@@ -40,7 +40,7 @@ const Person = (props) => {  // printtaa henkilöt ja niiden numerot
     return (
         <div>
         {personsToShow.map(tyyppi =>
-            <li className ='person' key = {tyyppi.id}>{tyyppi.name}  {tyyppi.number}  --------- <button onClick = {deletePerson.bind(this, tyyppi.id)}>  delete  </button> </li>
+            <li className ='person' key = {tyyppi.id}>{tyyppi.name}  {tyyppi.number} <button onClick = {deletePerson.bind(this, tyyppi.id)}>  delete  </button> </li>
            
                  
      )} 

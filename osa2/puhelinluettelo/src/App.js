@@ -18,7 +18,7 @@ const App = () => {
   const [ errorMessage, setErrorMessage] = useState(null)  // passaa nämä ADDD:lle, deletelle ym
   const [ succesfullOperation, setSuccesfullOperation] = useState(null)
  
-const baseUrl = 'http://localhost:3001/persons'
+const baseUrl = 'http://localhost:3001/api/persons'
 useEffect(() =>{
   axios
   .get(baseUrl)

@@ -95,6 +95,7 @@ const AddPerson = (props) => {
         setNewNumber(event.target.value)
      
       }
+      
 
 
     return (
