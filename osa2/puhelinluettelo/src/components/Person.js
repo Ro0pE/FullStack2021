@@ -9,7 +9,7 @@ const Person = (props) => {  // printtaa henkilöt ja niiden numerot
       const person = persons.find(n => n.id === id)
       if (typeof(id) !== 'undefined') {
       const newList = props.persons.filter((person) => person.id !== id);
-      console.log(newList)
+      
 
       personService
       .deletePerson(id)

@@ -14,7 +14,7 @@ const persons = props.persons
   const deleteAll = () => {
     const testi = persons.length
     for (let  i = 1; i <= testi; i++){
-      console.log(persons.length)
+    
     personService
     .deletePerson(i)
 

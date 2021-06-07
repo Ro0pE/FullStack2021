@@ -37,7 +37,7 @@ useEffect(() =>{
       <h1>Add a new:</h1>
          <AddPerson persons = {persons} setPersons = {setPersons} newPerson = {newPerson} setNewPerson = {setNewPerson}
           newNumber = {newNumber} setNewNumber = {setNewNumber} errorMessage = {errorMessage} setErrorMessage = {setErrorMessage}
-          succesfullOperation = {succesfullOperation} setSuccesfullOperation = {setSuccesfullOperation}/>
+          succesfullOperation = {succesfullOperation} setSuccesfullOperation = {setSuccesfullOperation} />
 
       <h2>Numbers:</h2>
           <Person  setPersons ={setPersons} newFilter = {newFilter} persons = {persons} errorMessage = {errorMessage} setErrorMessage = {setErrorMessage} />

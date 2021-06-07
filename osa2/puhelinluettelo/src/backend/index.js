@@ -6,6 +6,7 @@ const cors = require('cors')
 app.use(express.json())
 app.use(cors())
 app.use(express.static('build'))
+const Person = require('./models/person')
 
 morgan.token("person", (req, res) => {
     return JSON.stringify(req.body);
@@ -82,6 +83,19 @@ app.delete('/api/persons/:id', (request,response) => {
     persons = persons.filter(person => person.id !== id)         // filteröi pois annetulla id:llä olevan henkilön
     response.status(204).end()  // REST-testattu, skulaa
 })
+//PUT
+app.put('/api/persons/:id', (req, res, next) => {
+  const body = req.body
+
+  const person = {
+    name: body.name,
+    number: body.number
+  }
+  Person.findByIdAndUpdate(req.params.id, person, { new: true })
+  .then(updatedPerson => {
+    res.json(updatedPerson)
+  }).catch(error => next(error))
+})
 //POST
 
 app.post('/api/persons', (request, response) => {  // REST-testattu, toimii
@@ -112,7 +126,7 @@ app.post('/api/persons', (request, response) => {  // REST-testattu, toimii
             })
         }
 
-    console.log(body)
+
     persons = persons.concat(person)
   
     response.json(person)

@@ -9,9 +9,10 @@ const AddPerson = (props) => {
     const setNewPerson = props.setNewPerson
     const setNewNumber = props.setNewNumber
     const setSuccesfullOperation = props.setSuccesfullOperation
+    const setErrorMessage = props.setErrorMessage
   
 
-   
+   console.log('skulaako tää skeida olleskaan enää')
 
     const add = () => {   // lisätään henkilö, nimi,numero ja id
        
@@ -39,8 +40,19 @@ const AddPerson = (props) => {
            let message = `Person ${personObject.name} is already added to phonebook, replace the old number with a new one?`
            let result = window.confirm(message)      
            if (result === true){ /// kun halutaan päivittää numero eli klikataan ok
+            console.log('listalla olevan id', persons[i].id)
+         
             const person = persons.find(n=> n.id === persons[i].id)
             const updatedPerson =  {...person, number: newNumber}
+            console.log('udpated perset : ' , updatedPerson)
+            
+            
+           /* personService
+            .addPerson(personObject)
+            .then(response => {
+             setPersons(persons.concat(response))
+            })
+            */
 
             personService   // päivitetään databasen tieto
              .updateNumber(persons[i].id, updatedPerson)
@@ -49,6 +61,7 @@ const AddPerson = (props) => {
             })
          
            }
+          
            if (result === false){
             
            }
@@ -57,17 +70,19 @@ const AddPerson = (props) => {
         }
       
         }
-
+        const minLength = 3;
+        const minNumberLength = 8;
         
         if (!(listalla === true)){
-
-          if (typeof(personObject.name) !== 'undefined'){
+          
+          if (typeof(personObject.name) !== 'undefined' && newPerson.length >= minLength && newNumber.length >= minNumberLength){
              personService    
              .addPerson(personObject)
              .then(response => {
               setPersons(persons.concat(response))
+              setNewPerson("");
+              setNewNumber("");
              })
-
              setSuccesfullOperation(`Added ${personObject.name} `) 
              setTimeout(() => {
                setSuccesfullOperation(null)
@@ -75,7 +90,21 @@ const AddPerson = (props) => {
        
             } 
         }
-    
+        if (newPerson.length < minLength){
+          console.log('nimi liia lyhyt')
+          setErrorMessage(`Name too short `) 
+             setTimeout(() => {
+               setErrorMessage(null)
+             }, 2000)
+
+        }
+        if (newNumber < minNumberLength){
+          console.log('numero liia lyhy')
+          setErrorMessage(`Number too short`) 
+             setTimeout(() => {
+               setErrorMessage(null)
+             }, 2000)
+        }
         listalla = false;
       
       }
@@ -96,7 +125,6 @@ const AddPerson = (props) => {
      
       }
       
-
 
     return (
         <form onSubmit = {add}>
