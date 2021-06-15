@@ -1,0 +1,11 @@
+PUT http://localhost:3003/api/blogs/60c30d24ae9d6e2b9092146e
+Content-Type: application/json
+//muista id!
+
+
+{
+    "title": "1",
+    "author": "2 blogi",
+    "url": "www.2222222222",
+    "likes": 22
+}

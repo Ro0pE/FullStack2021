@@ -2,8 +2,9 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title": "TESTOSIKA GG",
-    "author": "JA gorillla",
-    "url": "www.666.fgasdgagagi/juu",
-    "likes": 5
+    "title": "Sampan jorinat part II",
+    "author": "Sami Salo",
+    "url": "www.goooooogle.juu",
+    "likes": 125,
+    "userId": "60c8844989a82847d0fb7f42"
 }
