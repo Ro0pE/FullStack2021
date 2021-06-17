@@ -4,6 +4,8 @@ const { post } = require('../app')
 const app = require('../app')
 const api = supertest(app)
 const Blog = require('../models/blogDB')
+const helper = require('../utils/user_helper')
+
 const testBlogs = [
     {
         
@@ -12,6 +14,7 @@ const testBlogs = [
         url:
           'www.thl.fi',
         likes: 5,
+        userId: "abc122",
 
       },
       {
@@ -21,6 +24,7 @@ const testBlogs = [
         url:
           'www.maltsu.fi',
         likes: 10,
+        userId: "abc125",
 
       },
       {
@@ -30,6 +34,7 @@ const testBlogs = [
         url:
           'www.gg.fi',
         likes: 73,
+        userId: "abc126",
  
       },
       {
@@ -39,6 +44,7 @@ const testBlogs = [
         url:
           'www.kokkikolmonen.fi',
         likes: 1150,
+        userId: "abc172",
 
       },
 ]
@@ -52,6 +58,7 @@ beforeEach(async () => {
     await blogObject.save()
     blogObject = new Blog(testBlogs[3])
     await blogObject.save()
+    jest.setTimeout(999999999)
 })
 
 
@@ -60,17 +67,20 @@ beforeEach(async () => {
 
 describe('check JSON', () => {
 test('blogs are returned as JSON', async () => {
+  jest.setTimeout(60000000)
     await api
     .get('/api/blogs')
     .expect(200)
     .expect('Content-Type', /application\/json/)
 })
 test('blogs can be added', async() => {
+  helper.initialUsers[0].id
     const newBlog = {
-        title: 'Testi',
-        author: 'Testihenkilö',
-        url: 'www.fi',
-        likes: 1
+      title:"2222222" ,
+      author: "Sami Salo",
+      url: "www.goooooogle.juu",
+      likes: 123,
+      userId: "abc12"   // WTF
       }
     await api
     .post('/api/blogs')
@@ -85,10 +95,11 @@ test('blogs can be added', async() => {
 })
 test('if value of "like" is empty, set it value to 0', async () =>{
     const newBlog = {
-        title: 'Testi',
-        author: 'Testihenkilö',
-        url: 'www.fi',
-        likes: null
+      title: "test",
+      author: "test",
+      url: "test",
+      likes: null,
+      user: "test"
       }
       if (newBlog.likes === null) {
           newBlog.likes = 0

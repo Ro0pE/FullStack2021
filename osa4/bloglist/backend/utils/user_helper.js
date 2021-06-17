@@ -5,7 +5,7 @@ const User = require('../models/userDB')
 
 const initialUsers = [
   {
-    _id: '123',
+    id: '123',
     username: 'Roope',
     password: 'kameli123',
     name: 'Roope Roberto',
