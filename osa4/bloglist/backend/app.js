@@ -4,6 +4,7 @@ const app = express()
 const blogRouter = require('./controllers/blogRoutes')
 const userRouter = require('./controllers/userRoutes')
 const loginRouter = require('./controllers/loginRoute')
+const testingRouter = require('./controllers/testRoutes')
 const cors = require('cors')
 const middleware = require('./utils/middleware')
 
@@ -37,5 +38,11 @@ app.use(middleware.tokenExtractor)
 app.use('/api/blogs', blogRouter)
 app.use('/api/users', userRouter)
 app.use('/api/login', loginRouter)
+
+//if (process.env.NODE_ENV === 'test') {
+ // const testingRouter = require('./controllers/testRoutes')
+  app.use('/api/testing', testingRouter)
+//}
+
 
 module.exports = app

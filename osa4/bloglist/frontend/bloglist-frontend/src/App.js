@@ -83,16 +83,16 @@ console.log('test!')
         <form onSubmit={handleLogin}>
           <div>
             Username: 
-            <input type="text" value={username} name="Username" onChange={({target}) => setUsername(target.value)}
+            <input id='username' type="text" value={username} name="Username" onChange={({target}) => setUsername(target.value)}
             />
           </div>
           <div>
             Password:
-            <input type="text" value={password} name="Password" onChange={({target}) => setPassword(target.value)}
+            <input id='password' type="text" value={password} name="Password" onChange={({target}) => setPassword(target.value)}
             />
           </div>
           <div>
-            <button type="submit"> LOGIN </button>
+            <button id='login-button'type="submit"> LOGIN </button>
           </div>
         </form>
       </div>
@@ -106,9 +106,9 @@ return (
   <Notification message={notification}/>
   <h1>Blogs</h1>
   <div> {user.name} is logged in &emsp;<button onClick={handleLogout}> Logout</button></div>
-  {filteredBlogs.map(blog =>
+  <div className='blog'> {filteredBlogs.map(blog =>
     <Blog key={blog.id} blog={blog} setBlogs={setBlogs} blogs={blogs} />
-  )}
+  )} </div>
   <div>
     <CreateForm  key={user.id} user={user} blogs={blogs} setBlogs={setBlogs} notification={notification} setNotification={setNotification}/>
     </div>
