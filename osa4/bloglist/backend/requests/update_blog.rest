@@ -1,11 +1,11 @@
-PUT http://localhost:3003/api/blogs/60c30d24ae9d6e2b9092146e
+PUT http://localhost:3003/api/blogs/60d212edb4b2835a0c8fb126
 Content-Type: application/json
 //muista id!
 
 
 {
-    "title": "1",
-    "author": "2 blogi",
-    "url": "www.2222222222",
+    "title": "Testi",
+    "author": "Roope",
+    "url": "www.google.fick",
     "likes": 22
 }
