@@ -18,7 +18,7 @@ const AnecdoteForm = (propsit) => {
   return (
     <div>
       <form onSubmit={addAnecdote}>
-      <button type="submit">Create new </button>
+      <button className="create" type="submit">Create new </button>
         <input name="anecdote" />
       </form>
     </div>

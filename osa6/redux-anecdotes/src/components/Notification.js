@@ -4,18 +4,22 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const Notification = (props) => {
-  const style = {
-    color: 'green',
-    size: 45,
-    border: 'solid',
-    padding: 10,
-    borderWidth: 0
-  }
+console.log(props.notification)
+if (props.notification !== null) {
   return (
-    <div style={style}>
+    <div className="notification">
       {props.notification}
     </div>
   )
+} else {
+  return (
+    <div>
+      {props.notification}
+    </div>
+  )
+
+}
+
 }
 
 const mapStateToProps = (state) => {

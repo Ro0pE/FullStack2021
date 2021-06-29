@@ -15,7 +15,7 @@ const AnecdoteList = (props) => {
     <div>
       {props.anecdotesToShow.map(anecdote =>
         <div key={anecdote.id}>
-          <li>{anecdote.content} has {anecdote.votes} votes --> <button onClick={() => voteAnecdote(anecdote)}>vote</button></li>         
+          <li className="anecdoteText">{anecdote.content} has {anecdote.votes} votes <button className="vote" onClick={() => voteAnecdote(anecdote)}>vote</button></li>         
           <div>   
           </div>
         </div>

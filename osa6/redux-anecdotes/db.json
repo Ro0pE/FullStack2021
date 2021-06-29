@@ -2,13 +2,38 @@
   "anecdotes": [
     {
       "content": "test",
-      "votes": 0,
+      "votes": 4,
       "id": 1
     },
     {
       "content": "test",
-      "votes": 0,
+      "votes": 6,
       "id": 2
+    },
+    {
+      "content": "wtfwtf",
+      "votes": 6,
+      "id": 3
+    },
+    {
+      "content": "wtfTER",
+      "votes": 0,
+      "id": 4
+    },
+    {
+      "content": "fff",
+      "votes": 2,
+      "id": 5
+    },
+    {
+      "content": "terve",
+      "votes": 0,
+      "id": 6
+    },
+    {
+      "content": "wtfwtf",
+      "votes": 0,
+      "id": 7
     }
   ]
 }
