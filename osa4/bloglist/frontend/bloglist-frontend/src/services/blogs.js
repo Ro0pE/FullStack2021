@@ -31,6 +31,13 @@ const updateBlog = async (id, newObject) => {
   return request.data
   
 }
+const getBlogByID = async (id) => {
+  const config = {
+    headers: { Authorization: token },
+  }
+  const request = await axios.get(`${baseUrl}/${id}`, config)
+  return request.data
+}
 
 const removeBlog = async (id) => {
   const config = {
@@ -41,6 +48,6 @@ const removeBlog = async (id) => {
   return request.data
 }  
 
-const exportObjects = { getAllBlogs, createBlog, setToken, updateBlog, removeBlog }
+const exportObjects = { getAllBlogs, createBlog, setToken, updateBlog, removeBlog , getBlogByID}
 
 export default exportObjects

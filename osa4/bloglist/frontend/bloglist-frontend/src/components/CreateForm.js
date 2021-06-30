@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import blogService from "../services/blogs"
+
 //import Notification from './Notification'
 
 const CreateBlog = props => {
@@ -62,19 +63,19 @@ if (check){
   
   return (
     <div>
-      <button onClick = {closeForm}>Hide</button>
-      <h2>create new</h2>
+      <button className='hideviewbutton' onClick = {closeForm}>Hide</button>
+      <h2 className='createnew'>create new</h2>
       <form onSubmit={event => createBlog(event, title, author, url)}>
         <div>Title: <input id='title' value={title} onChange={({ target }) => setTitle(target.value)} /></div>
         <div>Author: <input id='author' value={author} onChange={({ target }) => setAuthor(target.value)} /></div>
         <div>Url: <input id='url' value={url} onChange={({ target }) => setUrl(target.value)} /></div>
-        <button type="submit" id='create'>createblog</button>
+        <button className='createnew' type="submit" id='create'>createblog</button>
       </form>
     </div>
   )
   } else {
     return (
-      <button onClick = {openForm}>Create</button>
+      <button className='createnew'  onClick = {openForm}>Create</button>
     )
   }
 

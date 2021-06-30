@@ -6,7 +6,7 @@ const Notification = ({ message }) => {
     Notification.propTypes = {
         message: PropTypes.string.isRequired
     }
-    if (message === null) {
+    if (message === '') {
       return null
     }
     

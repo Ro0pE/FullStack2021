@@ -2,9 +2,11 @@ import React from 'react'
 import blogService from "../services/blogs"  
 import { useState } from 'react'
 
+
+
 const Blog = (props) => {
 
-  const [visible,setVisible] = useState(false)
+  const [visible,setVisible] = useState(true)
   const hide = { display: visible ? 'none' : ''}
   const show = { display: visible ? '' : 'none'}
 
@@ -25,6 +27,7 @@ const Blog = (props) => {
       likes: blog.likes + 1,
       user: blog.user.id,
     })
+    console.log('blog is liked , id :' , blog.id)
     window.location.reload()
     } catch(error){
       console.log('error' , error)
@@ -46,11 +49,13 @@ const Blog = (props) => {
  return (
    <div key={blog.id}  >
       <div style={hide}>
-         <p>Title: {blog.title} <button id='view' onClick={toggleVisibility}>view</button></p>
+         <p className='yolo'>{blog.title} <button className='hideviewbutton' id='view' onClick={toggleVisibility}>view</button></p>
       </div>
       <div style={show}>
-        <p>Title: {blog.title} &emsp; Author: {blog.author} &emsp; Url: {blog.url}  &emsp; Likes: {blog.likes} <button id='hide' onClick={toggleVisibility}>hide</button>
-        <button onClick={() => handleLikeBlog(blog)}>like</button><button onClick={() => handleRemoveBlog(blog)}>remove</button></p>
+        <p className='boldattuyms'>Title: {blog.title}  <p className='boldattuyms'>Author: {blog.author} &emsp; </p><p className='boldattuyms'>Url: {blog.url}  &emsp;</p> 
+        <p className='boldattuyms'>Likes: {blog.likes} &emsp; <button className='likebutton' onClick={() => handleLikeBlog(blog)}>like</button></p> <button className='hideviewbutton' id='hide' onClick={toggleVisibility}>hide</button>
+        <button className='removebutton'onClick={() => handleRemoveBlog(blog)}>remove</button></p>
+        <p>-------------------------------------------------------------------</p>
      </div> 
   </div>
  )

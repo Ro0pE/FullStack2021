@@ -19,9 +19,111 @@
   }
 
   .blog {
-    color: rgb(25, 199, 103);
+    color: rgb(6, 15, 10);
     padding: 15px;
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bolder;
   }
+  .blogs {
+    color: rgb(21, 150, 79);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 58px;
+    font-weight: bolder;
+  }
+  .likebutton {
+    color: rgb(201, 198, 33);
+    font-size: 18px;
+    font-weight: bolder;
 
+  }
+  .removebutton {
+    color: rgb(175, 63, 29);
+    font-size: 12px;
+    font-weight: bolder;
+
+  }
+  .hideviewbutton {
+    color: rgb(21, 188, 218);
+    font-size: 12px;
+    font-weight: bolder;
+
+  }
+  .loggedin {
+    color: rgb(21, 188, 218);
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bolder;
+
+  }
+    .loggout {
+    color: rgb(218, 21, 80);
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bolder;
+
+  }
+  .users {
+    color: rgb(204, 160, 18);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 58px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+  }
+  .blogscreated{
+    color: rgb(21, 188, 218);
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bolder;
+  }
+  .createnew{
+    color: rgb(21, 188, 218);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-family: monospace;
+    font-size: 25px;
+    font-weight: bolder;
+
+  }
+  .boldattuyms {
+    color: rgb(218, 126, 21);
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: bolder;
+
+  }
+  .yolo{
+    color: rgb(10, 223, 28);
+    font-family: monospace;
+    font-size: 25;
+    font-weight: bolder;
+  }
+  .firstLogin{
+
+      color: rgb(21, 188, 218);
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+      font-family: monospace;
+      font-size: 45px;
+      font-weight: bolder; 
+  }
+  .credentials{
+    color: rgb(218, 21, 136);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+
+  }
+  .boldattuyms2{
+    color: rgb(218, 126, 21);
+    font-family: monospace;
+    font-size: 25px;
+    font-weight: bolder;
+
+  }

@@ -26,7 +26,7 @@ test('renders title and author', () => {
 
 test('renders title, author, url and likes when "view" is pressed', () => {
     const blog = {
-      title: 'testi',
+      title: 'wtfwtwf',
       author: 'jartsa',
       url: 'testi',
       likes: 0

@@ -37,6 +37,7 @@ blogsRouter.post('/', async (request,response) => {
   })
 
   const newBlog = await blog.save()
+  console.log('test' , newBlog)
   user.blogs = user.blogs.concat(newBlog._id)  // userin blog-kenttään tallennetaan luodun blogin id
   await user.save()
   return response.status(201).json(newBlog.toJSON()) 
